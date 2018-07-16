@@ -1,19 +1,30 @@
 import React, { Component } from 'react'
 import { getApartments } from '../../api'
+import Card from '../../components/ApartmentCard'
 
 class All extends Component {
 	constructor(props) {
 		super(props)
 
 		this.state = {
-			apartments: getApartments().then(list => { return list })
+			apartments: []
 		}
 	}
 
+	componentWillMount() {
+		getApartments().then(list => { this.setState({apartments:list})})
+	}
+
 	render() {
-		console.log(this.state);
+		let { apartments } = this.state
+
 		return (
-			<div>Apartments</div>
+			<main>
+				<h1>All Apartments</h1>
+				{apartments.map(apartment => {
+					return (<Card key={apartment.id} apartment={apartment} />)
+				})}
+			</main>
 		)
 	}
 }

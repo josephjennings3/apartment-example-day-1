@@ -11,10 +11,10 @@ class App extends Component {
 			<Router>
 				<Switch>
 					{/* Restful Routes for Apartment */}
-					<Route path="/apartments" component={AllApartments} />
+					<Route exact path="/apartments" component={AllApartments} />
 					<Route path="/apartments/new" component={CreateApartment} />
 					<Route path="/apartments/:id" component={ShowApartment} />
-					<Route path="/" component={AllApartments}/>
+					<Route exact path="/" component={AllApartments}/>
 				</Switch>
 			</Router>
 		);

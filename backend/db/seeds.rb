@@ -3,5 +3,23 @@
 #
 # Examples:
 #
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+apartments = Apartment.create([
+  {
+    street1: 'ABC Street',
+    city: 'San Diego',
+    zip: '91942',
+    state: 'CA',
+    manager: 'Best Manager',
+    phone: '111-111-1111',
+    hours: '9am-5pm M-F'
+  },
+  {
+    street1: 'Example Street',
+    city: 'San Diego',
+    zip: '91927',
+    state: 'CA',
+    manager: 'John Snow',
+    phone: '123-456-7890',
+    hours: '8am-6pm Mon-Sun'
+  }
+])
