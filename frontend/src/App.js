@@ -4,18 +4,22 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import AllApartments from './pages/apartments/All'
 import CreateApartment from './pages/apartments/Create'
 import ShowApartment from './pages/apartments/Show'
+import Login from './components/Login'
+import Header from './components/Header'
+import ApartmentContainer from './containers/apartments'
 
 class App extends Component {
 	render() {
 		return (
 			<Router>
-				<Switch>
-					{/* Restful Routes for Apartment */}
-					<Route exact path="/apartments" component={AllApartments} />
-					<Route path="/apartments/new" component={CreateApartment} />
-					<Route path="/apartments/:id" component={ShowApartment} />
-					<Route exact path="/" component={AllApartments}/>
-				</Switch>
+				<div>
+					<Header />
+					<Switch>
+						<Route path="/apartments" component={ApartmentContainer} />
+						<Route path="/login" component={Login} />
+						<Route exact path="/" component={ApartmentContainer}/>
+					</Switch>
+				</div>
 			</Router>
 		);
 	}
