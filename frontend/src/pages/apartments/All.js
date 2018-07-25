@@ -17,6 +17,7 @@ class All extends Component {
 
 	render() {
 		let { apartments } = this.state
+		console.log(apartments);
 
 		return (
 			<main>
